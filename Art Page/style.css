@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    overflow: hidden;
+}
+
+.header-content {
+    text-align: center;
+    z-index: 2; /*z index determines the stacking order of elements*/
+}
+
+.header h1 {
+    font-size: 65px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header p {
+    font-size: 25px;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Gallery Section */
+.section {
+    padding: 60px 30px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #bb86fc;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.artwork {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.artwork:hover {
+    transform: translateY(-10px); /*Make the artwork move by 10 pixels when hovered over*/
+}
+
+.artwork img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;/*applies a transition animation effect*/
+}
+
+.artwork:hover img {
+    transform: scale(1.05);
+}
+
+.artwork-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.artwork:hover .artwork-info {
+    transform: translateY(0);
+}
+
+.artwork-title {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Process Section */
+.process {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.process-item {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.2);
+}
+
+.process-item video {
+    width: 100%;
+    display: block;
+    background: #000;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .process {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+}
